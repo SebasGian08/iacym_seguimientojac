@@ -3,67 +3,53 @@ let rowTable = "";
 let divLoading = document.querySelector("#divLoading");
 document.addEventListener('DOMContentLoaded', function(){
 
-    var tableClientes = $('#tableClientes').DataTable({
-        "processing": true,
-        "serverSide": true,
+    tableClientes = $('#tableClientes').dataTable( {
+        "aProcessing":true,
+        "aServerSide":true,
         "language": {
             "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
         },
-        "ajax": {
-            "url": "https://api.grupocodware.com/public/api/pacientes",
-            "dataSrc": ""
-        },  
-        "columns": [
-            {title:"ID","data": "idpat"},
-            {title:"DNI","data": "numpat", "render": function(data, type, row, meta) {
-                return row.numpat; // Assuming you want to display the consultorio.nomconsul
-            }},
-            {title:"Nombre","data": "nompa", "render": function(data, type, row, meta) {
-                return row.nompa; // Assuming you want to display the consultorio.nomconsul
-            }},
-            {title:"Telefono","data": "telepat", "render": function(data, type, row, meta) {
-                return row.telepat; // Assuming you want to display the consultorio.nomconsul
-            }},
-            {title:"Correo","data": "correo", "render": function(data, type, row, meta) {
-                return row.correo; // Assuming you want to display the consultorio.nomconsul
-            }},
-            {title:"Nacimiento","data": "nacipat", "render": function(data, type, row, meta) {
-                return row.nacipat; // Assuming you want to display the consultorio.nomconsul
-            }},
-            {title:"Genero","data": "sexpat", "render": function(data, type, row, meta) {
-                return row.sexpat; // Assuming you want to display the consultorio.nomconsul
-            }},
-           
-
+        "ajax":{
+            "url": " "+base_url+"/Clientes/getClientes",
+            "dataSrc":""
+        },
+        "columns":[
+            {"data":"idpersona"},
+            {"data":"identificacion"},
+            {"data":"nombres"},
+            {"data":"apellidos"},
+            {"data":"email_user"},
+            {"data":"telefono"},
+            {"data":"options"}
         ],
-        "dom": 'lBfrtip',
-        "buttons": [
+        'dom': 'lBfrtip',
+        'buttons': [
             {
                 "extend": "copyHtml5",
                 "text": "<i class='far fa-copy'></i> Copiar",
-                "titleAttr": "Copiar",
+                "titleAttr":"Copiar",
                 "className": "btn btn-secondary"
             },{
                 "extend": "excelHtml5",
                 "text": "<i class='fas fa-file-excel'></i> Excel",
-                "titleAttr": "Exportar a Excel",
+                "titleAttr":"Esportar a Excel",
                 "className": "btn btn-success"
             },{
                 "extend": "pdfHtml5",
                 "text": "<i class='fas fa-file-pdf'></i> PDF",
-                "titleAttr": "Exportar a PDF",
+                "titleAttr":"Esportar a PDF",
                 "className": "btn btn-danger"
             },{
                 "extend": "csvHtml5",
                 "text": "<i class='fas fa-file-csv'></i> CSV",
-                "titleAttr": "Exportar a CSV",
+                "titleAttr":"Esportar a CSV",
                 "className": "btn btn-info"
             }
         ],
-        "responsive": true,
-        "destroy": true,
-        "pageLength": 10,
-        "order": [[0, "desc"]]
+        "resonsieve":"true",
+        "bDestroy": true,
+        "iDisplayLength": 10,
+        "order":[[0,"desc"]]  
     });
 
 	if(document.querySelector("#formCliente")){

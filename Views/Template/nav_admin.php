@@ -18,7 +18,7 @@
             <?php if(!empty($_SESSION['permisos'][1]['r'])){ ?>
             <li>
                 <a class="app-menu__item" href="<?= base_url(); ?>/dashboard">
-                    <i class="app-menu__icon fa fa-dashboard"></i>
+                    <i class="app-menu__icon fa fa-home"></i>
                     <span class="app-menu__label">Dashboard</span>
                 </a>
             </li>
@@ -30,6 +30,13 @@
                     <span class="app-menu__label">Calendario de Actividades</span>
                 </a>
             </li>
+            <li>
+                <a class="app-menu__item" href="<?= base_url(); ?>/celulas">
+                    <i class="app-menu__icon fa fa-check"></i>
+                    <span class="app-menu__label">Celulas Registradas</span>
+                </a>
+            </li>
+
 
 
             <?php if(!empty($_SESSION['permisos'][2]['r'])){ ?>
@@ -46,7 +53,7 @@
                             Roles</a></li>
                 </ul>
             </li>
-            <?php } ?>
+            <!-- <?php } ?>
             <?php if(!empty($_SESSION['permisos'][3]['r'])){ ?>
             <li>
                 <a class="app-menu__item" href="<?= base_url(); ?>/clientes">
@@ -98,8 +105,8 @@
                 <ul class="treeview-menu">
                     <li><a class="treeview-item" href="<?= base_url(); ?>/historial"><i class="icon fa fa-circle-o"></i>
                             Historial</a></li>
-                    <li><a class="treeview-item" href="<?= base_url(); ?>/triaje"><i
-                                class="icon fa fa-circle-o"></i> Triaje</a></li>
+                    <li><a class="treeview-item" href="<?= base_url(); ?>/triaje"><i class="icon fa fa-circle-o"></i>
+                            Triaje</a></li>
                 </ul>
             </li>
 
@@ -137,7 +144,7 @@
                     <span class="app-menu__label">Páginas</span>
                 </a>
             </li>
-            <?php } ?>
+            <?php } ?> -->
 
             <li>
                 <a class="app-menu__item" href="<?= base_url(); ?>/logout">

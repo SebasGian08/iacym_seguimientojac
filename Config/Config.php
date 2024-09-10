@@ -1,6 +1,6 @@
 <?php 
 	/* const BASE_URL = "https://ismcmineriajyeeirl.com/"; */
-	const BASE_URL = "http://localhost:8081/iacym_jac/";
+	const BASE_URL = "http://localhost:8081/iacym_jac";
 
 	//Zona horaria
 	date_default_timezone_set('America/Lima');

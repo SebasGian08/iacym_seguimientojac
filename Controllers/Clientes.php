@@ -19,9 +19,9 @@ class Clientes extends Controllers{
 		if(empty($_SESSION['permisosMod']['r'])){
 			header("Location:".base_url().'/dashboard');
 		}
-		$data['page_tag'] = "Pacientes";
-		$data['page_title'] = "Pacientes";
-		$data['page_name'] = "pacientes";
+		$data['page_tag'] = "Asistentes";
+		$data['page_title'] = "Asistentes";
+		$data['page_name'] = "asistentes";
 		$data['page_functions_js'] = "functions_clientes.js";
 		$this->views->getView($this,"clientes",$data);
 	}
